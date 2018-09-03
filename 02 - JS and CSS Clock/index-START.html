@@ -62,13 +62,45 @@
       background:black;
       position: absolute;
       top:50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1,1.93,0.60,1);
     }
 
   </style>
 
   <script>
 
+    // variables 
+    const secondsHand = document.querySelector('.second-hand');
+    const minutesHand = document.querySelector('.min-hand');
+    const hoursHand = document.querySelector('.hour-hand');
+    
+    function setDate() {
 
+      const now = new Date();
+      const seconds = now.getSeconds();
+      const minutes = now.getMinutes();
+      const hours = now.getHours();
+
+      const secondsToDegrees = ((seconds / 60) * 360) + 90;
+      const minutesToDegrees = ((minutes / 60) * 360) + 90;
+      const hoursToDegrees = ((hours / 12) * 360) + 90;
+      console.log(secondsToDegrees);
+
+      // solving the reset -- probably not the most elegant solution
+      // but the only one I came out with
+
+      if (secondsToDegrees === 444 ) {
+        secondsHand.style.transition = 'all 0.0s';
+      } 
+        secondsHand.style.transform = `rotate(${secondsToDegrees}deg)`
+        minutesHand.style.transform = `rotate(${minutesToDegrees}deg)`
+        hoursHand.style.transform = `rotate(${hoursToDegrees}deg)`
+    }
+
+    setInterval(setDate, 1000)
   </script>
 </body>
 </html>
