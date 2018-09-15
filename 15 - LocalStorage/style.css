@@ -1,7 +1,7 @@
 
     html {
       box-sizing: border-box;
-      background:url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
+      background:url('./img/Kill-Bill.jpg') center no-repeat;
       background-size:cover;
       min-height:100vh;
       display:flex;
@@ -64,7 +64,7 @@
     }
 
     .plates input:checked + label:before {
-      content: '🌮';
+      content: '🔪';
     }
 
     .add-items {

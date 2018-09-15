@@ -51,3 +51,11 @@ progress.addEventListener('click', scrub);
 progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
+
+const fullscreen = document.getElementById('fullscreen');
+fullscreen.addEventListener('click', goFullscreen);
+
+function goFullscreen() {
+  video.height = 1000;
+  video.width = 1000;
+}
