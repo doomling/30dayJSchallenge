@@ -7,7 +7,7 @@
 <body>
 
   <div class="hero">
-    <h1 contenteditable>🔥WOAH!</h1>
+    <h1 contenteditable>✨glitter & unicorns 🦄</h1>
   </div>
 
   <style>
@@ -32,9 +32,62 @@
     text-shadow: 10px 10px 0 rgba(0,0,0,1);
     font-size: 100px;
   }
+
   </style>
 
 <script>
+
+  const editable = document.querySelector('.hero')
+  const text = document.querySelector('h1')
+  const walk = 100
+  let shade = 0
+  let otherShade = 255
+
+  shadow = (e) => {
+    const width = editable.offsetWidth
+    const height = editable.offsetHeight
+    
+    let x = e.offsetX
+    let y = e.offsetY
+
+    if (this !== e.target) {
+      x = x + e.target.offsetLeft
+      y = y + e.target.offsetTop
+    }
+
+    changeShade = () => {
+      if (shade >= 360) {
+       shade = 0;
+      }
+      shade ++;
+      console.log(shade)
+      return shade
+    }
+
+    function debounce(func, wait = 150, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+
+    document.addEventListener('mousemove', debounce(changeShade))
+
+    const xWalk = (x / width * walk) - (walk / 2)
+    const yWalk = (y / height * walk) - (walk / 2)
+    
+    text.style.textShadow = `${xWalk}px ${yWalk}px 0 hsl(${shade}, 100%, 50%)`
+  }
+
+  editable.addEventListener('mousemove', shadow)
 </script>
 </body>
 </html>
