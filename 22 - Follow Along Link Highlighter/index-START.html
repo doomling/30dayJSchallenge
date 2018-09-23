@@ -9,24 +9,54 @@
 
     <nav>
       <ul class="menu">
-        <li><a href="">Home</a></li>
-        <li><a href="">Order Status</a></li>
-        <li><a href="">Tweets</a></li>
-        <li><a href="">Read Our History</a></li>
-        <li><a href="">Contact Us</a></li>
+        <li><a href="http://gatitosonline.org/">Nuestra web</a></li>
+        <li><a href="https://www.facebook.com/somosgatitosonline">Facebook</a></li>
+        <li><a href="https://twitter.com/somosgatitoson">Nuestros Tweets</a></li>
+        <li><a href="https://www.instagram.com/somosgatitosonline/">Instagram</a></li>
+        <li><a href="mailto: holagatitosonline@gmail.com">Contactanos</a></li>
       </ul>
     </nav>
 
     <div class="wrapper">
-      <p>Lorem ipsum dolor sit amet, <a href="">consectetur</a> adipisicing elit. Est <a href="">explicabo</a> unde natus necessitatibus esse obcaecati distinctio, aut itaque, qui vitae!</p>
-      <p>Aspernatur sapiente quae sint <a href="">soluta</a> modi, atque praesentium laborum pariatur earum <a href="">quaerat</a> cupiditate consequuntur facilis ullam dignissimos, aperiam quam veniam.</p>
-      <p>Cum ipsam quod, incidunt sit ex <a href="">tempore</a> placeat maxime <a href="">corrupti</a> possimus <a href="">veritatis</a> ipsum fugit recusandae est doloremque? Hic, <a href="">quibusdam</a>, nulla.</p>
-      <p>Esse quibusdam, ad, ducimus cupiditate <a href="">nulla</a>, quae magni odit <a href="">totam</a> ut consequatur eveniet sunt quam provident sapiente dicta neque quod.</p>
-      <p>Aliquam <a href="">dicta</a> sequi culpa fugiat <a href="">consequuntur</a> pariatur optio ad minima, maxime <a href="">odio</a>, distinctio magni impedit tempore enim repellendus <a href="">repudiandae</a> quas!</p>
+      <h3>"El gato es el único animal que ha logrado domesticar al hombre." - <a href="">Marcel Mauss</h3>
+      <p>
+          <a href=""><Gatitos online></a> nació a fines de 2015, cuando, después de años de trabajar de manera independiente, decidimos organizarnos para realizar tareas de castración y rescate en varias colonias de gatos de Capital Federal.
+      </p>
+      <p>
+          El foco de nuestra labor es controlar la población en las colonias, rescatar a los <a href="">cachorros</a></cachorros> y adultos que todavía están en edad de socialización y mejorar la calidad de vida de aquellos que son demasiado ferales para adaptarse.
+      </p>
+      <p>
+          No contamos con ayuda externa y todo nuestro trabajo es sin fines de lucro, por lo que los gastos corren de nuestros bolsillos y muchas veces dependemos de donaciones para seguir adelante.
+      <p>
+          Si te interesa nuestra labor y querés recibir más información escribinos a <a href="mailto:holagatitosonline@gmail.com">holagatitosonline@gmail.com</a> o visitanos en <a href="www.facebook.com/somosgatitosonline"> Facebook </a>.
+      </p>
     </div>
 
   <script>
     // 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+    const triggers = document.querySelectorAll('a');
+    const highlight = document.createElement('span');
+  
+    highlight.classList.add('highlight');
+    document.body.appendChild(highlight);
+    
+    function highlightLink() {
+      const linkCoords = this.getBoundingClientRect();
+    
+      const coords = {
+        width: linkCoords.width,
+        height: linkCoords.height,
+        top: linkCoords.top + window.scrollY,
+        left: linkCoords.left + window.scrollX
+      };
+      
+        highlight.style.width = `${coords.width}px`;
+        highlight.style.height = `${coords.height}px`;
+        highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
+    }
+    
+    triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
+
   </script>
 </body>
 </html>
