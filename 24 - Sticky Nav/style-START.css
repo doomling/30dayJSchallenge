@@ -26,7 +26,7 @@ body {
 header {
   text-align: center;
   height:50vh;
-  background:url(http://wes.io/iEgP/wow-so-deep.jpg) bottom center no-repeat;
+  background:url(https://images.pexels.com/photos/110854/pexels-photo-110854.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) bottom center no-repeat;
   background-size:cover;
   display:flex;
   align-items:center;
@@ -63,10 +63,21 @@ nav li {
   align-items: center;
 }
 
+.fixed-nav nav {
+  position: fixed;
+  box-shadow: 0 10px deeppink;
+}
+
+.fixed-nav li.logo {
+  max-width: 80px;
+}
+
 li.logo {
   max-width:0;
+  background-color: deeppink;
+  background: url('./Mooncake-MP.png') bottom center no-repeat;
+  background-size: 70px;
   overflow: hidden;
-  background: white;
   transition: all .5s;
   font-weight: 600;
   font-size: 30px;
@@ -83,4 +94,8 @@ nav a {
   color:white;
   transition:all 0.2s;
   text-transform: uppercase;
+}
+
+.slide-in {
+  max-width: 600px;
 }
