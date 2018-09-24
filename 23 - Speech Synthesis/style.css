@@ -25,6 +25,11 @@ body {
   background-size:100px 50px;
 }
 
+.glados {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+}
 
 .voiceinator {
   padding:2rem;

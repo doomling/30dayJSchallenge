@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <img class="glados" src="./glados.png"/>
     <div class="voiceinator">
 
-      <h1>The Voiceinator 5000</h1>
+      <h1>Gladosnator 5000</h1>
 
       <select name="voice" id="voices">
         <option value="">Select A Voice</option>
@@ -21,8 +21,8 @@
 
       <label for="pitch">Pitch:</label>
 
-      <input name="pitch" type="range" min="0" max="2" step="0.1">
-      <textarea name="text">Hello! I love JavaScript 👍</textarea>
+      <input name="pitch" type="range" min="0" max="2" step="0">
+      <textarea name="text">The Enrichment Center is required to remind you that you will be baked, and then there will be cake</textarea>
       <button id="stop">Stop!</button>
       <button id="speak">Speak</button>
 
@@ -35,6 +35,43 @@
   const options = document.querySelectorAll('[type="range"], [name="text"]');
   const speakButton = document.querySelector('#speak');
   const stopButton = document.querySelector('#stop');
+
+  msg.text = document.querySelector('[name="text"]').value;
+  
+  function populateVoices() {
+    voices = this.getVoices();
+    voicesDropdown.innerHTML = voices
+      .filter(voice => voice.lang.includes('us'))
+      .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
+      .join('');
+  }
+  
+  function setVoice() {
+    msg.voice = voices.find(voice => voice.name === this.value);
+    toggle();
+  }
+  
+  function toggle(startOver = true) {
+    speechSynthesis.cancel();
+    if (startOver) {
+      speechSynthesis.speak(msg);
+    }
+  }
+  
+  function setOption() {
+    console.log(this.name, this.value);
+    msg[this.name] = this.value;
+    toggle();
+  }
+
+  //listeners
+
+  speechSynthesis.addEventListener('voiceschanged', populateVoices);
+  voicesDropdown.addEventListener('change', setVoice);
+  options.forEach(option => option.addEventListener('change', setOption));
+  speakButton.addEventListener('click', toggle);
+  stopButton.addEventListener('click', () => toggle(false));
+
 </script>
 
 </body>
