@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  background: url('https://source.unsplash.com/NFs6dRTBgaM/2000x2000') fixed;
+  background: #222;
   background-size: cover;
 }
 
@@ -22,7 +22,6 @@ body {
   height:800px;
   padding: 100px;
   width:100%;
-  border:1px solid white;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -56,15 +55,15 @@ body {
   box-shadow: inset 0 0 0 10px rgba(0,0,0,0.15);
 }
 
-.item:nth-child(9n+1) { background: dodgerblue;}
-.item:nth-child(9n+2) { background: goldenrod;}
-.item:nth-child(9n+3) { background: paleturquoise;}
-.item:nth-child(9n+4) { background: gold;}
-.item:nth-child(9n+5) { background: cadetblue;}
-.item:nth-child(9n+6) { background: tomato;}
-.item:nth-child(9n+7) { background: lightcoral;}
-.item:nth-child(9n+8) { background: darkslateblue;}
-.item:nth-child(9n+9) { background: rebeccapurple;}
+.item:nth-child(9n+1) { background: url('https://picsum.photos/g/700/') repeat}
+.item:nth-child(9n+2) { background: url('https://picsum.photos/g/600/') repeat}
+.item:nth-child(9n+3) { background: url('https://picsum.photos/100/?image=1080') repeat}
+.item:nth-child(9n+4) { background: url('https://picsum.photos/g/100/?gravity=east') repeat}
+.item:nth-child(9n+5) { background: url('https://picsum.photos/800/?image=1080') repeat}
+.item:nth-child(9n+6) { background: url('https://picsum.photos/g/100/?blur') repeat}
+.item:nth-child(9n+7) { background: url('https://picsum.photos/g/600/?gravity=center') repeat}
+.item:nth-child(9n+8) { background: url('https://picsum.photos/800/?blur&image=1080') repeat}
+.item:nth-child(9n+9) { background: url('https://picsum.photos/g/600/?gravity=center') repeat}
 
 .item:nth-child(even) { transform: scaleX(1.31) rotateY(40deg); }
 .item:nth-child(odd) { transform: scaleX(1.31) rotateY(-40deg); }
