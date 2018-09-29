@@ -1,8 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
-  background: #8E24AA;
-  background: linear-gradient(45deg,  #42a5f5 0%,#478ed1 50%,#0d47a1 100%);
+  background-image: url('./img/donuts.jpg');
 }
 
 *, *:before, *:after {
@@ -21,6 +20,8 @@ body {
   margin: 0;
   color:white;
   text-shadow:4px 4px 0 rgba(0,0,0,0.05);
+  background: palevioletred;
+  padding: 10px;
 }
 
 .timer {
@@ -30,6 +31,7 @@ body {
 }
 
 .timer__controls {
+  background-color: palevioletred;
   display: flex;
 }
 
@@ -78,5 +80,7 @@ body {
 
 .display__end-time {
   font-size: 4rem;
-  color:white;
+  color: white;
+  padding: 10px;
+  background-color: palevioletred;
 }
