@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
-  background: #ffc600;
+  background: #d3d3d3;
 }
 
 *, *:before, *:after {
@@ -19,6 +19,13 @@ h1 {
   font-size: 10rem;
   line-height:1;
   margin-bottom: 0;
+}
+
+button {
+  background-color: #cf77b1;
+  border: 2px solid #a0238b;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .score {
@@ -44,7 +51,7 @@ h1 {
 
 .hole:after {
   display: block;
-  background: url(dirt.svg) bottom center no-repeat;
+  background: url(cloud1.svg);
   background-size:contain;
   content:'';
   width: 100%;
@@ -55,7 +62,7 @@ h1 {
 }
 
 .mole {
-  background:url('mole.svg') bottom center no-repeat;
+  background:url('doomling.png') bottom center no-repeat;
   background-size:60%;
   position: absolute;
   top: 100%;
